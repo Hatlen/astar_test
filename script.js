@@ -15,11 +15,14 @@ map = [
 "sky", "cloud", "sky", "cloud", "sky", "cloud", "cloud","sky", "cloud", "sky", "cloud", "sky", "cloud", "cloud","cloud",
 "sky", "cloud", "cloud", "sky", "sky", "sky", "sky","sky", "cloud", "sky", "cloud", "sky", "cloud", "sky", "sky",
 "cloud", "sky", "cloud", "sky", "cloud", "sky", "sky","cloud", "sky", "cloud", "sky", "cloud", "sky", "sky","sky",
-"sky", "sky", "sky", "cloud", "sky", "cloud", "sky","sky", "sky", "sky", "cloud", "sky", "cloud", "sky", "sky",
-"sky", "left_ground", "ground", "ground", "ground", "right_ground", "sky","sky", "left_ground", "ground", "ground", "ground", "right_ground", "sky", "sky",
-"left_ground", "left_ground_earth", "earth", "earth", "earth", "right_ground_earth", "right_ground", "left_ground", "left_ground_earth", "earth", "earth", "earth", "right_ground_earth", "right_ground", "sky"
+"sky", "sky", "left_ground", "ground", "ground", "ground", "right_ground", "sky", "sky", "sky", "cloud", "sky", "cloud", "sky", "sky",
+"sky", "left_ground", "left_ground_earth", "right_earth", "sky", "sky", "sky","sky", "left_ground", "ground", "ground", "ground", "right_ground", "sky", "sky",
+"left_ground", "left_ground_earth", "earth", "right_ground_earth", "right_ground", "left_ground", "ground", "ground","left_ground_earth", "earth", "earth", "earth", "right_ground_earth", "right_ground", "sky",
+"left_earth", "earth", "earth", "earth", "right_earth", "left_earth", "earth", "earth", "earth","earth","earth","earth","earth", "right_ground_earth", "ground",
+"left_earth", "earth", "earth", "earth", "right_earth", "left_earth", "earth", "earth", "earth","earth","earth","earth","earth", "earth", "earth",
 ],
 numXTiles = 15,
+numYTiles = 8,
 tileWidth = 100,
 
 draw = function(ctx, map, img) {
@@ -62,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log('document ready');
   var canvas, ctx, img;
   canvas = document.getElementById('canvas');
-  canvas.height = 600;
+  canvas.height = 800;
   canvas.width = 1500;
   ctx = canvas.getContext('2d');
   img = new Image();
