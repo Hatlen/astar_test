@@ -1,6 +1,6 @@
-require([], function() {
+require(['/src/map.js'], function(Map) {
   var
-  map = [
+  _map = [
     0, 0, 0, 0,
     1, 1, 1, 0,
     0, 0, 0, 0,
@@ -8,13 +8,14 @@ require([], function() {
   ],
   num_x_tiles = 4,
   num_y_tiles = 4,
+  map = new Map(_map, {x: 4, y: 4}),
   tile_height = tile_width = 48,
   gutter = 2,
-  tiles_count = num_x_tiles * num_y_tiles,
+  tiles_count = map.tiles.x * map.tiles.y,
 
   draw = function(ctx, map) {
-    ctx.clearRect(0, 0, 150, 300);
-    map.forEach(function (code, index) {
+    ctx.clearRect(0, 0, 200, 200);
+    map.map.forEach(function (code, index) {
       ctx.fillStyle = code === 1 ? "#00cccc" : "#ffff88";
       start_x = (index % num_x_tiles) * (tile_width + 2) + gutter/2;
       start_y = Math.floor(index / num_x_tiles) * (tile_width + 2) + gutter/2;
@@ -66,13 +67,13 @@ require([], function() {
     draw(ctx, map);
   });
 
-  function test() {
+  function print_available_moves() {
     var
     i = tiles_count;
-    console.log('TESTINGTESTINGTESTING');
+    console.log('Map index and corresponding available moves');
     while(i--) {
       console.log(i, getAvailableMoves(i));
     }
   }
-  test()
+  //print_available_moves()
 });

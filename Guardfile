@@ -6,7 +6,8 @@ guard 'livereload' do
   watch("style.css")
   watch("index.html")
   watch(%r{spec/.*\.(js|html)$})
-  watch(%r{lib/.*\.js$})
+  watch(%r{(lib|src)/.*\.js$})
 end
 
-guard 'coffeescript', :input => 'spec'
+guard 'coffeescript', :input => 'spec', :source_maps => true
+guard 'coffeescript', :input => 'src', :source_maps => true
